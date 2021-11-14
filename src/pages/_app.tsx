@@ -1,8 +1,7 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
 
-import { ColorMode, extendTheme, INativebaseConfig, NativeBaseProvider, NativeBaseProviderProps } from "native-base";
-import { Footer } from "../components/footer";
+import { ColorMode, extendTheme, INativebaseConfig, NativeBaseProvider, NativeBaseProviderProps } from 'native-base';
 // import { LinearGradient } from "expo-linear-gradient";
 
 // const config = {
@@ -18,16 +17,16 @@ function MyApp({ Component, pageProps }: AppProps) {
       colorModeManager={{
         get: async () => {
           try {
-            let val = sessionStorage.getItem("@color-mode");
-            return val === "dark" ? "dark" : "light";
+            let val = sessionStorage.getItem('@color-mode');
+            return val === 'dark' ? 'dark' : 'light';
           } catch (e) {
             console.error(e);
-            return "dark";
+            return 'dark';
           }
         },
         set: (value: ColorMode) => {
           try {
-            sessionStorage.setItem("@color-mode", value ?? "");
+            sessionStorage.setItem('@color-mode', value ?? '');
           } catch (e) {
             console.error(e);
           }
